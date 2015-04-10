@@ -3,10 +3,28 @@
 //  Smokescreen
 //
 //  Created by Alfred Hanssen on 2/9/14.
-//  Copyright (c) 2014 Vimeo. All rights reserved.
+//  Copyright (c) 2014-2015 Vimeo (https://vimeo.com)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
-#import "VideoPlayer.h"
+#import "VIMVideoPlayer.h"
 
 static const float DefaultPlayableBufferLength = 2.0f;
 static const float DefaultVolumeFadeDuration = 1.0f;
@@ -21,15 +39,15 @@ static void *VideoPlayer_PlayerItemPlaybackLikelyToKeepUp = &VideoPlayer_PlayerI
 static void *VideoPlayer_PlayerItemPlaybackBufferEmpty = &VideoPlayer_PlayerItemPlaybackBufferEmpty;
 static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_PlayerItemLoadedTimeRangesContext;
 
-@interface VideoPlayer ()
+@interface VIMVideoPlayer ()
 
 @property (nonatomic, strong, readwrite) AVPlayer *player;
 
-@property (nonatomic, assign, readwrite) BOOL isLoading;
-@property (nonatomic, assign, readwrite) BOOL isPlaying;
-@property (nonatomic, assign, readwrite) BOOL isScrubbing; // TODO: what's the difference between isScrubbing and isSeeking? [AH]
-@property (nonatomic, assign) BOOL isSeeking;
+@property (nonatomic, assign, getter=isPlaying, readwrite) BOOL playing;
+@property (nonatomic, assign, getter=isScrubbing) BOOL scrubbing;
+@property (nonatomic, assign, getter=isSeeking) BOOL seeking;
 @property (nonatomic, assign) BOOL isAtEndTime;
+@property (nonatomic, assign) BOOL shouldPlayAfterScrubbing;
 
 @property (nonatomic, assign) float volumeFadeDuration;
 @property (nonatomic, assign) float playableBufferLength;
@@ -39,7 +57,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 @end
 
-@implementation VideoPlayer
+@implementation VIMVideoPlayer
 
 - (void)dealloc
 {
@@ -176,7 +194,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
         return;
     }
     
-    self.isPlaying = YES;
+    self.playing = YES;
    
     if ([self.player.currentItem status] == AVPlayerItemStatusReadyToPlay)
     {
@@ -193,14 +211,14 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)pause
 {
-    self.isPlaying = NO;
+    self.playing = NO;
     
     [self.player pause];
 }
 
 - (void)seekToTime:(float)time
 {
-    if (_isSeeking)
+    if (_seeking)
     {
         return;
     }
@@ -214,18 +232,18 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
             return;
         }
         
-        _isSeeking = YES;
+        _seeking = YES;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             [self.player seekToTime:cmTime completionHandler:^(BOOL finished) {
                 
                 _isAtEndTime = NO;
-                _isSeeking = NO;
+                _seeking = NO;
 
                 if (finished)
                 {
-                    _isScrubbing = NO;
+                    _scrubbing = NO;
                 }
                 
             }];
@@ -266,7 +284,14 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)startScrubbing
 {
-    self.isScrubbing = YES;
+    self.scrubbing = YES;
+    
+    if (self.isPlaying)
+    {
+        self.shouldPlayAfterScrubbing = YES;
+
+        [self pause];
+    }
 }
 
 - (void)scrub:(float)time
@@ -283,7 +308,14 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)stopScrubbing
 {
-    self.isScrubbing = NO;
+    if (self.shouldPlayAfterScrubbing)
+    {
+        [self play];
+
+        self.shouldPlayAfterScrubbing = NO;
+    }
+
+    self.scrubbing = NO;
 }
 
 #pragma mark - Time Updates
@@ -375,8 +407,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)resetPlayerItemIfNecessary
 {
-    NSLog(@"resetPlayerItemIfNecessary");
-
     if (self.player.currentItem)
     {
         [self removePlayerItemObservers:self.player.currentItem];
@@ -387,16 +417,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     _volumeFadeDuration = DefaultVolumeFadeDuration;
     _playableBufferLength = DefaultPlayableBufferLength;
     
-    _isPlaying = NO;
+    _playing = NO;
     _isAtEndTime = NO;
-    _isLoading = NO;
-    _isScrubbing = NO;
+    _scrubbing = NO;
 }
 
 - (void)preparePlayerItem:(AVPlayerItem *)playerItem
 {
-    NSLog(@"preparePlayerItem");
-
     [self addPlayerItemObservers:playerItem];
     
     [self.player replaceCurrentItemWithPlayerItem:playerItem];
@@ -474,8 +501,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)addPlayerObservers
 {
-    NSLog(@"add player observers");
-
     [self.player addObserver:self
                   forKeyPath:NSStringFromSelector(@selector(isExternalPlaybackActive))
                      options:NSKeyValueObservingOptionNew
@@ -489,8 +514,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)removePlayerObservers
 {
-    NSLog(@"rm player observers");
-
     @try
     {
         [self.player removeObserver:self
@@ -518,8 +541,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)addPlayerItemObservers:(AVPlayerItem *)playerItem
 {
-    NSLog(@"add player item observers");
-
     [playerItem addObserver:self
                  forKeyPath:NSStringFromSelector(@selector(status))
                     options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
@@ -548,8 +569,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)removePlayerItemObservers:(AVPlayerItem *)playerItem
 {
-    NSLog(@"rm player item observers");
-
     [playerItem cancelPendingSeeks];
     
     @try
@@ -603,8 +622,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)addTimeObserver
 {
-    NSLog(@"add time observer");
- 
     if (self.timeObserverToken || self.player == nil)
     {
         return;
@@ -629,8 +646,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)removeTimeObserver
 {
-    NSLog(@"rm time observer");
-
     if (self.timeObserverToken == nil)
     {
         return;
@@ -653,7 +668,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
         if (self.isScrubbing == NO && self.isPlaying && self.player.rate == 0.0f)
         {
             // TODO: Show loading indicator
-            NSLog(@"RATE CHANGED - SHOW LOADING INDICATOR");
         }
     }
     else if (context == VideoPlayer_PlayerItemStatusContext)
@@ -672,8 +686,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                 }
                 case AVPlayerItemStatusReadyToPlay:
                 {
-                    NSLog(@"Video player Status ready to play video");
-
                     if ([self.delegate respondsToSelector:@selector(videoPlayerIsReadyToPlayVideo:)])
                     {
                         dispatch_async(dispatch_get_main_queue(), ^{
@@ -713,7 +725,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
             if (self.isPlaying)
             {
                 // TODO: Show Loading indicator
-                NSLog(@"BUFFER EMPTY - SHOW LOADING INDICATOR");
             }
         }
     }
@@ -722,7 +733,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
         if (self.player.currentItem.playbackLikelyToKeepUp)
         {
             // TODO: Hide loading indicator
-            NSLog(@"LIKELY TO KEEP UP - HIDE LOADING INDICATOR");
 
             if (self.isScrubbing == NO && self.isPlaying && self.player.rate == 0.0f)
             {
@@ -778,7 +788,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     else
     {
         _isAtEndTime = YES;
-        self.isPlaying = NO;
+        self.playing = NO;
     }
         
     if ([self.delegate respondsToSelector:@selector(videoPlayerDidReachEnd:)])

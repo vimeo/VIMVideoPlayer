@@ -27,7 +27,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 @property (nonatomic, assign, readwrite) BOOL isLoading;
 @property (nonatomic, assign, readwrite) BOOL isPlaying;
-@property (nonatomic, assign, readwrite) BOOL isScrubbing; // TODO: what's the difference between isScrubbing and isSeeking? [AH]
+@property (nonatomic, assign, readwrite) BOOL isScrubbing;
+@property (nonatomic, assign) BOOL shouldPlayAfterScrubbing;
 @property (nonatomic, assign) BOOL isSeeking;
 @property (nonatomic, assign) BOOL isAtEndTime;
 
@@ -267,6 +268,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 - (void)startScrubbing
 {
     self.isScrubbing = YES;
+    
+    if ([self isPlaying])
+    {
+        self.shouldPlayAfterScrubbing = YES;
+
+        [self pause];
+    }
 }
 
 - (void)scrub:(float)time
@@ -283,6 +291,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)stopScrubbing
 {
+    if (self.shouldPlayAfterScrubbing)
+    {
+        [self play];
+
+        self.shouldPlayAfterScrubbing = NO;
+    }
+
     self.isScrubbing = NO;
 }
 

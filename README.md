@@ -86,6 +86,6 @@ See `VIMVideoPlayerViewController` for an example of how to encapsulate a `VIMVi
 
 Tweet at us here: @vimeoapi
 
-Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-api) with the tag `vimeo-api`
+Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`
 
 Get in touch [here](Vimeo.com/help/contact)

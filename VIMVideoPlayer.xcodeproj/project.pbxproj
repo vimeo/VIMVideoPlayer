@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		50E5070C1B1E23A600DF1F7A /* libVIMVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */; };
+		50E5071E1B1E23E100DF1F7A /* VIMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */; };
+		50E5071F1B1E23E100DF1F7A /* VIMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		50E5070D1B1E23A600DF1F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50E506F81B1E23A600DF1F7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 50E506FF1B1E23A600DF1F7A;
+			remoteInfo = VIMVideoPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		50E506FE1B1E23A600DF1F7A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVIMVideoPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIMVideoPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		50E507111B1E23A600DF1F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E5071A1B1E23E100DF1F7A /* VIMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayer.h; sourceTree = "<group>"; };
+		50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayer.m; sourceTree = "<group>"; };
+		50E5071C1B1E23E100DF1F7A /* VIMVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayerView.h; sourceTree = "<group>"; };
+		50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50E506FD1B1E23A600DF1F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50E507081B1E23A600DF1F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50E5070C1B1E23A600DF1F7A /* libVIMVideoPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		50E506F71B1E23A600DF1F7A = {
+			isa = PBXGroup;
+			children = (
+				50E507021B1E23A600DF1F7A /* VIMVideoPlayer */,
+				50E5070F1B1E23A600DF1F7A /* VIMVideoPlayerTests */,
+				50E507011B1E23A600DF1F7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50E507011B1E23A600DF1F7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */,
+				50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50E507021B1E23A600DF1F7A /* VIMVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				50E5071A1B1E23E100DF1F7A /* VIMVideoPlayer.h */,
+				50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */,
+				50E5071C1B1E23E100DF1F7A /* VIMVideoPlayerView.h */,
+				50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */,
+			);
+			path = VIMVideoPlayer;
+			sourceTree = "<group>";
+		};
+		50E5070F1B1E23A600DF1F7A /* VIMVideoPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				50E507101B1E23A600DF1F7A /* Supporting Files */,
+			);
+			path = VIMVideoPlayerTests;
+			sourceTree = "<group>";
+		};
+		50E507101B1E23A600DF1F7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				50E507111B1E23A600DF1F7A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50E507141B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayer" */;
+			buildPhases = (
+				50E506FC1B1E23A600DF1F7A /* Sources */,
+				50E506FD1B1E23A600DF1F7A /* Frameworks */,
+				50E506FE1B1E23A600DF1F7A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VIMVideoPlayer;
+			productName = VIMVideoPlayer;
+			productReference = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		50E5070A1B1E23A600DF1F7A /* VIMVideoPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50E507171B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */;
+			buildPhases = (
+				50E507071B1E23A600DF1F7A /* Sources */,
+				50E507081B1E23A600DF1F7A /* Frameworks */,
+				50E507091B1E23A600DF1F7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				50E5070E1B1E23A600DF1F7A /* PBXTargetDependency */,
+			);
+			name = VIMVideoPlayerTests;
+			productName = VIMVideoPlayerTests;
+			productReference = 50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50E506F81B1E23A600DF1F7A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = Vimeo;
+				TargetAttributes = {
+					50E506FF1B1E23A600DF1F7A = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					50E5070A1B1E23A600DF1F7A = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 50E506FB1B1E23A600DF1F7A /* Build configuration list for PBXProject "VIMVideoPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50E506F71B1E23A600DF1F7A;
+			productRefGroup = 50E507011B1E23A600DF1F7A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */,
+				50E5070A1B1E23A600DF1F7A /* VIMVideoPlayerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50E507091B1E23A600DF1F7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50E506FC1B1E23A600DF1F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50E5071F1B1E23E100DF1F7A /* VIMVideoPlayerView.m in Sources */,
+				50E5071E1B1E23E100DF1F7A /* VIMVideoPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		50E507071B1E23A600DF1F7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		50E5070E1B1E23A600DF1F7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */;
+			targetProxy = 50E5070D1B1E23A600DF1F7A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		50E507121B1E23A600DF1F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		50E507131B1E23A600DF1F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50E507151B1E23A600DF1F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		50E507161B1E23A600DF1F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		50E507181B1E23A600DF1F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		50E507191B1E23A600DF1F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50E506FB1B1E23A600DF1F7A /* Build configuration list for PBXProject "VIMVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50E507121B1E23A600DF1F7A /* Debug */,
+				50E507131B1E23A600DF1F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50E507141B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50E507151B1E23A600DF1F7A /* Debug */,
+				50E507161B1E23A600DF1F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50E507171B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50E507181B1E23A600DF1F7A /* Debug */,
+				50E507191B1E23A600DF1F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50E506F81B1E23A600DF1F7A /* Project object */;
+}

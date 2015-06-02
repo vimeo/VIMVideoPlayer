@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :branch => "cocoapods" }
+  s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => "5.4.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

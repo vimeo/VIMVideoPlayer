@@ -6,6 +6,15 @@
 
 Add the `VIMVideoPlayerView` and `VIMVideoPlayer` classes to your project. 
 
+Do this by including it as a git submodule or by using cocoapods:
+
+```Ruby
+# Add this to your podfile
+target 'MyTarget' do
+	pod 'VIMVideoPlayer', '5.4.2'
+end
+```
+
 ## Usage
 
 Create a new `VIMVideoPlayerView` and add it to your view hierarchy:

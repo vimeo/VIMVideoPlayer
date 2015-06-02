@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "VIMVideoPlayer"
-  s.version      = "0.0.1"
+  s.version      = "5.4.2"
   s.summary      = "A simple wrapper around the AVPlayer and AVPlayerLayer classes."
 
   s.description  = <<-DESC
@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => "5.4.2" }
+  s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

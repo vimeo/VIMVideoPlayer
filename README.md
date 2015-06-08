@@ -1,6 +1,6 @@
 # VIMVideoPlayer
 
-`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes.  
+`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. Check out the [Pegasus](https://github.com/vimeo/Pegasus) project for a demo. 
 
 ## Setup
 

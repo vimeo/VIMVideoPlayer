@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
   s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com" }
-  s.social_media_url   = "http://twitter.com/vimeo
+  s.social_media_url   = "http://twitter.com/vimeo"
 
   # s.platform     = :ios
   # s.platform     = :ios, "7.0"
@@ -45,7 +45,6 @@ Pod::Spec.new do |s|
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-
 
   s.requires_arc = true
 

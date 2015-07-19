@@ -40,19 +40,31 @@
     [self detachPlayer];
 }
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect)aRect
 {
-    self = [super init];
-    if (self)
-    {
-        _player = [[VIMVideoPlayer alloc] init];
-        _player.muted = YES;
-        _player.looping = YES;
-        
-        [self attachPlayer];
+    self = [super initWithFrame:aRect];
+    if (self) {
+        [self commonInit];
     }
-    
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super initWithCoder:decoder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit
+{
+    _player = [[VIMVideoPlayer alloc] init];
+    _player.muted = YES;
+    _player.looping = YES;
+    
+    [self attachPlayer];
 }
 
 #pragma mark - Public API

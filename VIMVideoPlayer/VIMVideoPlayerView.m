@@ -40,21 +40,27 @@
     [self detachPlayer];
 }
 
-- (instancetype)initWithFrame:(CGRect)aRect
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:aRect];
-    if (self) {
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
         [self commonInit];
     }
+    
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithCoder:decoder];
-    if (self) {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self)
+    {
         [self commonInit];
     }
+    
     return self;
 }
 

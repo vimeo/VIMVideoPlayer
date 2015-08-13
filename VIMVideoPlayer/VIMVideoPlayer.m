@@ -702,14 +702,29 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                 }
                 case AVPlayerItemStatusFailed:
                 {
-                    NSLog(@"Video player Status Failed: error = %@", self.player.currentItem.error);
+                    NSLog(@"Video player Status Failed: player item error = %@", self.player.currentItem.error);
+                    NSLog(@"Video player Status Failed: player error = %@", self.player.error);
                     
                     if ([self.delegate respondsToSelector:@selector(videoPlayer:didFailWithError:)])
                     {
                         [self reset];
                         
                         dispatch_async(dispatch_get_main_queue(), ^{
-                            [self.delegate videoPlayer:self didFailWithError:self.player.currentItem.error];
+
+                            if (self.player.error)
+                            {
+                                [self.delegate videoPlayer:self didFailWithError:self.player.error];
+                            }
+                            else if (self.player.currentItem.error)
+                            {
+                                [self.delegate videoPlayer:self didFailWithError:self.player.currentItem.error];
+                            }
+                            else
+                            {
+                                NSError *error = [NSError errorWithDomain:kVideoPlayerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey : @"unknown player error, status == AVPlayerItemStatusFailed"}];
+                                [self.delegate videoPlayer:self didFailWithError:error];
+                            }
+
                         });
                     }
                     

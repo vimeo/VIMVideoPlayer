@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
-  s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com" }
+  s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com", "Rob Huebner" => "robh@vimeo.com", "Gavin King" => "gavin@vimeo.com" }
   s.social_media_url   = "http://twitter.com/vimeo"
 
   # s.platform     = :ios

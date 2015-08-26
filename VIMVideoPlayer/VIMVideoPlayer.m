@@ -55,7 +55,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 @property (nonatomic, assign) BOOL isTimingUpdateEnabled;
 @property (nonatomic, strong) id timeObserverToken;
 
-@property (nonatomic, strong) AVPlayerItem *playerItem;
+@property (nonatomic, strong) AVPlayerItem *item;
 
 @end
 
@@ -407,13 +407,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)resetPlayerItemIfNecessary
 {
-    if (self.playerItem)
+    if (self.item)
     {
-        [self removePlayerItemObservers:self.playerItem];
+        [self removePlayerItemObservers:self.item];
         
         [self.player replaceCurrentItemWithPlayerItem:nil];
         
-        self.playerItem = nil;
+        self.item = nil;
     }
     
     _volumeFadeDuration = DefaultVolumeFadeDuration;
@@ -426,7 +426,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)preparePlayerItem:(AVPlayerItem *)playerItem
 {
-    self.playerItem = playerItem;
+    self.item = playerItem;
     
     [self addPlayerItemObservers:playerItem];
     

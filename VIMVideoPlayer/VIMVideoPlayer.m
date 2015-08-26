@@ -55,6 +55,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 @property (nonatomic, assign) BOOL isTimingUpdateEnabled;
 @property (nonatomic, strong) id timeObserverToken;
 
+@property (nonatomic, strong) AVPlayerItem *item;
+
 @end
 
 @implementation VIMVideoPlayer
@@ -68,8 +70,6 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     [self removeTimeObserver];
     
     [self cancelFadeVolume];
-
-    NSLog(@"dealloc");
 }
 
 - (instancetype)init
@@ -407,11 +407,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)resetPlayerItemIfNecessary
 {
-    if (self.player.currentItem)
+    if (self.item)
     {
-        [self removePlayerItemObservers:self.player.currentItem];
+        [self removePlayerItemObservers:self.item];
         
         [self.player replaceCurrentItemWithPlayerItem:nil];
+        
+        self.item = nil;
     }
     
     _volumeFadeDuration = DefaultVolumeFadeDuration;
@@ -424,6 +426,10 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)preparePlayerItem:(AVPlayerItem *)playerItem
 {
+    NSParameterAssert(playerItem);
+    
+    self.item = playerItem;
+    
     [self addPlayerItemObservers:playerItem];
     
     [self.player replaceCurrentItemWithPlayerItem:playerItem];
@@ -705,26 +711,22 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                     NSLog(@"Video player Status Failed: player item error = %@", self.player.currentItem.error);
                     NSLog(@"Video player Status Failed: player error = %@", self.player.error);
                     
+                    NSError *error = self.player.error;
+                    if (!error)
+                    {
+                        error = self.player.currentItem.error;
+                    }
+                    else
+                    {
+                        error = [NSError errorWithDomain:kVideoPlayerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey : @"unknown player error, status == AVPlayerItemStatusFailed"}];
+                    }
+                    
+                    [self reset];
+
                     if ([self.delegate respondsToSelector:@selector(videoPlayer:didFailWithError:)])
                     {
-                        [self reset];
-                        
                         dispatch_async(dispatch_get_main_queue(), ^{
-
-                            if (self.player.error)
-                            {
-                                [self.delegate videoPlayer:self didFailWithError:self.player.error];
-                            }
-                            else if (self.player.currentItem.error)
-                            {
-                                [self.delegate videoPlayer:self didFailWithError:self.player.currentItem.error];
-                            }
-                            else
-                            {
-                                NSError *error = [NSError errorWithDomain:kVideoPlayerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey : @"unknown player error, status == AVPlayerItemStatusFailed"}];
-                                [self.delegate videoPlayer:self didFailWithError:error];
-                            }
-
+                            [self.delegate videoPlayer:self didFailWithError:error];
                         });
                     }
                     

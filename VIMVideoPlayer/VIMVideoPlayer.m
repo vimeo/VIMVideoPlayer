@@ -426,6 +426,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
 - (void)preparePlayerItem:(AVPlayerItem *)playerItem
 {
+    NSParameterAssert(playerItem);
+    
     self.item = playerItem;
     
     [self addPlayerItemObservers:playerItem];

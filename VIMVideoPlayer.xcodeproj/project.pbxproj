@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50E5070C1B1E23A600DF1F7A /* libVIMVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */; };
+		501A3B931BA205A20059040B /* VIMVideoPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 501A3B921BA205A20059040B /* VIMVideoPlayerTests.m */; };
+		501A3B951BA205A20059040B /* libVIMVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */; settings = {ASSET_TAGS = (); }; };
 		50E5071E1B1E23E100DF1F7A /* VIMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */; };
 		50E5071F1B1E23E100DF1F7A /* VIMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		50E5070D1B1E23A600DF1F7A /* PBXContainerItemProxy */ = {
+		501A3B961BA205A20059040B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 50E506F81B1E23A600DF1F7A /* Project object */;
 			proxyType = 1;
@@ -35,9 +36,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		501A3B901BA205A20059040B /* VIMVideoPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIMVideoPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		501A3B921BA205A20059040B /* VIMVideoPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayerTests.m; sourceTree = "<group>"; };
+		501A3B941BA205A20059040B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVIMVideoPlayer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VIMVideoPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E507111B1E23A600DF1F7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50E5071A1B1E23E100DF1F7A /* VIMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayer.h; sourceTree = "<group>"; };
 		50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayer.m; sourceTree = "<group>"; };
 		50E5071C1B1E23E100DF1F7A /* VIMVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayerView.h; sourceTree = "<group>"; };
@@ -45,6 +47,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		501A3B8D1BA205A20059040B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501A3B951BA205A20059040B /* libVIMVideoPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50E506FD1B1E23A600DF1F7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -52,22 +62,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50E507081B1E23A600DF1F7A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				50E5070C1B1E23A600DF1F7A /* libVIMVideoPlayer.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		501A3B911BA205A20059040B /* VIMVideoPlayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				501A3B921BA205A20059040B /* VIMVideoPlayerTests.m */,
+				501A3B941BA205A20059040B /* Info.plist */,
+			);
+			path = VIMVideoPlayerTests;
+			sourceTree = "<group>";
+		};
 		50E506F71B1E23A600DF1F7A = {
 			isa = PBXGroup;
 			children = (
 				50E507021B1E23A600DF1F7A /* VIMVideoPlayer */,
-				50E5070F1B1E23A600DF1F7A /* VIMVideoPlayerTests */,
+				501A3B911BA205A20059040B /* VIMVideoPlayerTests */,
 				50E507011B1E23A600DF1F7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */,
-				50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */,
+				501A3B901BA205A20059040B /* VIMVideoPlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,25 +103,27 @@
 			path = VIMVideoPlayer;
 			sourceTree = "<group>";
 		};
-		50E5070F1B1E23A600DF1F7A /* VIMVideoPlayerTests */ = {
-			isa = PBXGroup;
-			children = (
-				50E507101B1E23A600DF1F7A /* Supporting Files */,
-			);
-			path = VIMVideoPlayerTests;
-			sourceTree = "<group>";
-		};
-		50E507101B1E23A600DF1F7A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				50E507111B1E23A600DF1F7A /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		501A3B8F1BA205A20059040B /* VIMVideoPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 501A3B981BA205A20059040B /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */;
+			buildPhases = (
+				501A3B8C1BA205A20059040B /* Sources */,
+				501A3B8D1BA205A20059040B /* Frameworks */,
+				501A3B8E1BA205A20059040B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				501A3B971BA205A20059040B /* PBXTargetDependency */,
+			);
+			name = VIMVideoPlayerTests;
+			productName = VIMVideoPlayerTests;
+			productReference = 501A3B901BA205A20059040B /* VIMVideoPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50E507141B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayer" */;
@@ -128,24 +141,6 @@
 			productReference = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		50E5070A1B1E23A600DF1F7A /* VIMVideoPlayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 50E507171B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */;
-			buildPhases = (
-				50E507071B1E23A600DF1F7A /* Sources */,
-				50E507081B1E23A600DF1F7A /* Frameworks */,
-				50E507091B1E23A600DF1F7A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				50E5070E1B1E23A600DF1F7A /* PBXTargetDependency */,
-			);
-			name = VIMVideoPlayerTests;
-			productName = VIMVideoPlayerTests;
-			productReference = 50E5070B1B1E23A600DF1F7A /* VIMVideoPlayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -155,10 +150,10 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Vimeo;
 				TargetAttributes = {
-					50E506FF1B1E23A600DF1F7A = {
-						CreatedOnToolsVersion = 6.3.1;
+					501A3B8F1BA205A20059040B = {
+						CreatedOnToolsVersion = 7.0;
 					};
-					50E5070A1B1E23A600DF1F7A = {
+					50E506FF1B1E23A600DF1F7A = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
@@ -176,13 +171,13 @@
 			projectRoot = "";
 			targets = (
 				50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */,
-				50E5070A1B1E23A600DF1F7A /* VIMVideoPlayerTests */,
+				501A3B8F1BA205A20059040B /* VIMVideoPlayerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		50E507091B1E23A600DF1F7A /* Resources */ = {
+		501A3B8E1BA205A20059040B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -192,6 +187,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		501A3B8C1BA205A20059040B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501A3B931BA205A20059040B /* VIMVideoPlayerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50E506FC1B1E23A600DF1F7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,24 +204,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		50E507071B1E23A600DF1F7A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		50E5070E1B1E23A600DF1F7A /* PBXTargetDependency */ = {
+		501A3B971BA205A20059040B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */;
-			targetProxy = 50E5070D1B1E23A600DF1F7A /* PBXContainerItemProxy */;
+			targetProxy = 501A3B961BA205A20059040B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		501A3B991BA205A20059040B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VIMVideoPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		501A3B9A1BA205A20059040B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VIMVideoPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		50E507121B1E23A600DF1F7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,41 +335,17 @@
 			};
 			name = Release;
 		};
-		50E507181B1E23A600DF1F7A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		50E507191B1E23A600DF1F7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = VIMVideoPlayerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		501A3B981BA205A20059040B /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				501A3B991BA205A20059040B /* Debug */,
+				501A3B9A1BA205A20059040B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		50E506FB1B1E23A600DF1F7A /* Build configuration list for PBXProject "VIMVideoPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -364,15 +360,6 @@
 			buildConfigurations = (
 				50E507151B1E23A600DF1F7A /* Debug */,
 				50E507161B1E23A600DF1F7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		50E507171B1E23A600DF1F7A /* Build configuration list for PBXNativeTarget "VIMVideoPlayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				50E507181B1E23A600DF1F7A /* Debug */,
-				50E507191B1E23A600DF1F7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

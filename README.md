@@ -85,7 +85,7 @@ Optionally implement the `VIMVideoPlayerViewDelegate` protocol methods:
 
 See `VIMVideoPlayer.h` for additional configuration options and functionality. 
 
-See `VIMVideoPlayerViewController` for an example of how to encapsulate a `VIMVideoPlayerView` instance with playback controls (play/pause/seek/airplay etc).
+See the [Pegasus](https://github.com/vimeo/Pegasus) project for an example of how to encapsulate a `VIMVideoPlayerView` instance with playback controls (play/pause/seek/airplay etc).
 
 ## License
 

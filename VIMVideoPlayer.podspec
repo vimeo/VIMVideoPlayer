@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "VIMVideoPlayer"
-  s.version      = "5.5.5"
+  s.version      = "5.6"
   s.summary      = "A simple wrapper around the AVPlayer and AVPlayerLayer classes."
   s.description  = <<-DESC
                    VIMVideoPlayer is a simple wrapper around the AVPlayer and AVPlayerLayer classes. Check out the README for details. And the Pegasus project for a demo.

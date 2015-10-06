@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
 
-s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com",
+  s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com",
                             "Rob Huebner" => "robh@vimeo.com",
                             "Gavin King" => "gavin@vimeo.com",
                             "Kashif Muhammad" => "support@vimeo.com",
@@ -29,29 +29,11 @@ s.authors            = { "Alfie Hanssen" => "alfiehanssen@gmail.com",
 
   s.social_media_url   = "http://twitter.com/vimeo"
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "7.0"
-
-  #  When using multiple platforms
-  s.ios.deployment_target = "7.0"
-  # s.osx.deployment_target = "10.7"
-
+s.ios.deployment_target = "7.0"
 
   s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => s.version.to_s }
   s.source_files  = "VIMVideoPlayer", "VIMVideoPlayer/*.{h,m}"
   s.exclude_files = "VIMVideoPlayer/Exclude"
-
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
-
-  # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
 
   s.requires_arc = true
 

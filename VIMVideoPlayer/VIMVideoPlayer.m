@@ -741,7 +741,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
         {
             if (self.isPlaying)
             {
-                // TODO: Show Loading indicator
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    if ([self.delegate respondsToSelector:@selector(videoPlayerPlaybackBufferEmpty:)])
+                    {
+                        [self.delegate videoPlayerPlaybackBufferEmpty:self];
+                    }
+                });
             }
         }
     }

@@ -97,4 +97,4 @@ Tweet at us here: @vimeoapi
 
 Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`
 
-Get in touch [here](Vimeo.com/help/contact)
+Get in touch [here](https://vimeo.com/help/contact)

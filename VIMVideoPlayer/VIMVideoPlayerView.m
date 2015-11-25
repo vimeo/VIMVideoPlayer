@@ -156,6 +156,14 @@
     }
 }
 
+- (void)videoPlayerPlaybackBufferEmpty:(VIMVideoPlayer *)videoPlayer
+{
+    if ([self.delegate respondsToSelector:@selector(videoPlayerViewPlaybackBufferEmpty:)])
+    {
+        [self.delegate videoPlayerViewPlaybackBufferEmpty:self];
+    }
+}
+
 - (void)videoPlayer:(VIMVideoPlayer *)videoPlayer didFailWithError:(NSError *)error
 {
     if ([self.delegate respondsToSelector:@selector(videoPlayerView:didFailWithError:)])

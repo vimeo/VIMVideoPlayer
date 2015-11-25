@@ -37,6 +37,8 @@
 - (void)videoPlayerDidReachEnd:(VIMVideoPlayer *)videoPlayer;
 - (void)videoPlayer:(VIMVideoPlayer *)videoPlayer timeDidChange:(CMTime)cmTime;
 - (void)videoPlayer:(VIMVideoPlayer *)videoPlayer loadedTimeRangeDidChange:(float)duration;
+- (void)videoPlayerPlaybackBufferEmpty:(VIMVideoPlayer *)videoPlayer;
+- (void)videoPlayerPlaybackLikelyToKeepUp:(VIMVideoPlayer *)videoPlayer;
 - (void)videoPlayer:(VIMVideoPlayer *)videoPlayer didFailWithError:(NSError *)error;
 
 @end

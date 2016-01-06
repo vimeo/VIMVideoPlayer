@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		501A3B931BA205A20059040B /* VIMVideoPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 501A3B921BA205A20059040B /* VIMVideoPlayerTests.m */; };
-		501A3B951BA205A20059040B /* libVIMVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */; settings = {ASSET_TAGS = (); }; };
+		501A3B951BA205A20059040B /* libVIMVideoPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */; };
 		50E5071E1B1E23E100DF1F7A /* VIMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */; };
 		50E5071F1B1E23E100DF1F7A /* VIMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */; };
+		B698D9241C264D5C0011F8B4 /* VIMVideoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B698D9231C264D5C0011F8B4 /* VIMVideoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B698D9291C264D670011F8B4 /* VIMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */; };
+		B698D92A1C264D670011F8B4 /* VIMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */; };
+		B698D92B1C264DD10011F8B4 /* VIMVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E5071A1B1E23E100DF1F7A /* VIMVideoPlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B698D92C1C264DD10011F8B4 /* VIMVideoPlayerView.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E5071C1B1E23E100DF1F7A /* VIMVideoPlayerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,9 @@
 		50E5071B1B1E23E100DF1F7A /* VIMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayer.m; sourceTree = "<group>"; };
 		50E5071C1B1E23E100DF1F7A /* VIMVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayerView.h; sourceTree = "<group>"; };
 		50E5071D1B1E23E100DF1F7A /* VIMVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayerView.m; sourceTree = "<group>"; };
+		B698D9211C264D5B0011F8B4 /* VIMVideoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VIMVideoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B698D9231C264D5C0011F8B4 /* VIMVideoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIMVideoKit.h; sourceTree = "<group>"; };
+		B698D9251C264D5C0011F8B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50E506FD1B1E23A600DF1F7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B698D91D1C264D5B0011F8B4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -79,6 +94,7 @@
 			children = (
 				50E507021B1E23A600DF1F7A /* VIMVideoPlayer */,
 				501A3B911BA205A20059040B /* VIMVideoPlayerTests */,
+				B698D9221C264D5C0011F8B4 /* VIMVideoKit */,
 				50E507011B1E23A600DF1F7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +104,7 @@
 			children = (
 				50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */,
 				501A3B901BA205A20059040B /* VIMVideoPlayerTests.xctest */,
+				B698D9211C264D5B0011F8B4 /* VIMVideoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +120,29 @@
 			path = VIMVideoPlayer;
 			sourceTree = "<group>";
 		};
+		B698D9221C264D5C0011F8B4 /* VIMVideoKit */ = {
+			isa = PBXGroup;
+			children = (
+				B698D9231C264D5C0011F8B4 /* VIMVideoKit.h */,
+				B698D9251C264D5C0011F8B4 /* Info.plist */,
+			);
+			path = VIMVideoKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B698D91E1C264D5B0011F8B4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B698D92B1C264DD10011F8B4 /* VIMVideoPlayer.h in Headers */,
+				B698D92C1C264DD10011F8B4 /* VIMVideoPlayerView.h in Headers */,
+				B698D9241C264D5C0011F8B4 /* VIMVideoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		501A3B8F1BA205A20059040B /* VIMVideoPlayerTests */ = {
@@ -141,6 +180,24 @@
 			productReference = 50E507001B1E23A600DF1F7A /* libVIMVideoPlayer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		B698D9201C264D5B0011F8B4 /* VIMVideoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B698D9281C264D5C0011F8B4 /* Build configuration list for PBXNativeTarget "VIMVideoKit" */;
+			buildPhases = (
+				B698D91C1C264D5B0011F8B4 /* Sources */,
+				B698D91D1C264D5B0011F8B4 /* Frameworks */,
+				B698D91E1C264D5B0011F8B4 /* Headers */,
+				B698D91F1C264D5B0011F8B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VIMVideoKit;
+			productName = VIMVideoPlayerFramework;
+			productReference = B698D9211C264D5B0011F8B4 /* VIMVideoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -155,6 +212,9 @@
 					};
 					50E506FF1B1E23A600DF1F7A = {
 						CreatedOnToolsVersion = 6.3.1;
+					};
+					B698D9201C264D5B0011F8B4 = {
+						CreatedOnToolsVersion = 7.2;
 					};
 				};
 			};
@@ -172,12 +232,20 @@
 			targets = (
 				50E506FF1B1E23A600DF1F7A /* VIMVideoPlayer */,
 				501A3B8F1BA205A20059040B /* VIMVideoPlayerTests */,
+				B698D9201C264D5B0011F8B4 /* VIMVideoKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		501A3B8E1BA205A20059040B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B698D91F1C264D5B0011F8B4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,6 +269,15 @@
 			files = (
 				50E5071F1B1E23E100DF1F7A /* VIMVideoPlayerView.m in Sources */,
 				50E5071E1B1E23E100DF1F7A /* VIMVideoPlayer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B698D91C1C264D5B0011F8B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B698D9291C264D670011F8B4 /* VIMVideoPlayer.m in Sources */,
+				B698D92A1C264D670011F8B4 /* VIMVideoPlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +412,52 @@
 			};
 			name = Release;
 		};
+		B698D9261C264D5C0011F8B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = VIMVideoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VIMVideoKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B698D9271C264D5C0011F8B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = VIMVideoKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VIMVideoKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,6 +468,7 @@
 				501A3B9A1BA205A20059040B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50E506FB1B1E23A600DF1F7A /* Build configuration list for PBXProject "VIMVideoPlayer" */ = {
 			isa = XCConfigurationList;
@@ -360,6 +484,15 @@
 			buildConfigurations = (
 				50E507151B1E23A600DF1F7A /* Debug */,
 				50E507161B1E23A600DF1F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B698D9281C264D5C0011F8B4 /* Build configuration list for PBXNativeTarget "VIMVideoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B698D9261C264D5C0011F8B4 /* Debug */,
+				B698D9271C264D5C0011F8B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

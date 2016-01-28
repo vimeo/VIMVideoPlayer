@@ -734,6 +734,16 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                 }
             }
         }
+        else if (newStatus == AVPlayerItemStatusReadyToPlay)
+        {
+            if ([self.delegate respondsToSelector:@selector(videoPlayerPlaybackLikelyToKeepUp:)])
+            {
+                dispatch_async(dispatch_get_main_queue(), ^
+                {
+                    [self.delegate videoPlayerPlaybackLikelyToKeepUp:self];
+                });
+            }
+        }
     }
     else if (context == VideoPlayer_PlayerItemPlaybackBufferEmpty)
     {

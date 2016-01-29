@@ -164,6 +164,14 @@
     }
 }
 
+- (void)videoPlayerPlaybackLikelyToKeepUp:(VIMVideoPlayer *)videoPlayer
+{
+    if ([self.delegate respondsToSelector:@selector(videoPlayerViewPlaybackLikelyToKeepUp:)])
+    {
+        [self.delegate videoPlayerViewPlaybackLikelyToKeepUp:self];
+    }
+}
+
 - (void)videoPlayer:(VIMVideoPlayer *)videoPlayer didFailWithError:(NSError *)error
 {
     if ([self.delegate respondsToSelector:@selector(videoPlayerView:didFailWithError:)])

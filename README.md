@@ -1,6 +1,6 @@
 # VIMVideoPlayer
 
-`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. Check out the [Pegasus](https://github.com/vimeo/Pegasus) project for a demo. 
+`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
 
 ## Setup
 
@@ -50,7 +50,7 @@ Play a video:
 ```Objective-c
 // Using an NSURL
 
-NSURL *URL = ...;
+NSURL *URL = ...; // This must be a URL to a video resource, not to a webpage with a video player embedded in it
 [self.videoPlayerView.player setURL:URL];
 [self.videoPlayerView.player play];
 
@@ -85,7 +85,6 @@ Optionally implement the `VIMVideoPlayerViewDelegate` protocol methods:
 
 See `VIMVideoPlayer.h` for additional configuration options and functionality. 
 
-See the [Pegasus](https://github.com/vimeo/Pegasus) project for an example of how to encapsulate a `VIMVideoPlayerView` instance with playback controls (play/pause/seek/airplay etc).
 
 ## License
 

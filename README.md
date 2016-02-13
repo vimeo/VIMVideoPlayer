@@ -50,13 +50,15 @@ Play a video:
 ```Objective-c
 // Using an NSURL
 
-// This must be a URL to an actual video resource (e.g. http://website.com/video.mp4, http://website.com/video.m3u8 etc.),
-// It cannot be a URL to a web page (e.g. https://vimeo.com/67069182),
-// See below for info on using VIMVideoPlayer to play Vimeo videos.
-
 NSURL *URL = ...; 
 [self.videoPlayerView.player setURL:URL];
 [self.videoPlayerView.player play];
+
+/* 
+Note: This must be a URL to an actual video resource (e.g. http://website.com/video.mp4, http://website.com/video.m3u8 etc.),
+It cannot be a URL to a web page (e.g. https://vimeo.com/67069182),
+See below for info on using VIMVideoPlayer to play Vimeo videos.
+*/
 
 // Using an AVPlayerItem
 
@@ -95,7 +97,7 @@ See [`VIMVideoPlayer.h`](https://github.com/vimeo/VIMVideoPlayer/blob/master/VIM
 
 If you have a [Vimeo Pro](https://vimeo.com/pro) account, when you make a request to the [Vimeo API](https://developer.vimeo.com/) for a video object the response object will contain a list of video `files`. These represent the various resolution video files available for this particular video. Each has a `link`. You can use the string value keyed to `link` to create an NSURL. You can pass this NSURL to VIMVideoPlayer for playback.
 
-Check out [this](http://stackoverflow.com/questions/31960338/ios-vimvideoplayerview-cant-load-vimeo-videos/31992612#31992612) Stack Overflow question for additional info.
+Check out [this](http://stackoverflow.com/questions/31960338/ios-vimvideoplayerview-cant-load-vimeo-videos) Stack Overflow question for additional info.
 
 You can use the [Vimeo iOS SDK](https://github.com/vimeo/VIMNetworking) to interact with the [Vimeo API](https://developer.vimeo.com/). 
 

@@ -51,8 +51,8 @@ Play a video:
 // Using an NSURL
 
 // This must be a URL to an actual video resource (e.g. http://website.com/video.mp4, http://website.com/video.m3u8 etc.),
-// It cannot be a URL to a web page (e.g. [https://vimeo.com/67069182](https://vimeo.com/67069182)),
-// See [below](https://github.com/vimeo/VIMVideoPlayer#playing-vimeo-videos) for info on using VIMVideoPlayer to play Vimeo videos.
+// It cannot be a URL to a web page (e.g. https://vimeo.com/67069182),
+// See below for info on using VIMVideoPlayer to play Vimeo videos.
 
 NSURL *URL = ...; 
 [self.videoPlayerView.player setURL:URL];

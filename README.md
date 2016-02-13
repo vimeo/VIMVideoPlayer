@@ -55,9 +55,9 @@ NSURL *URL = ...;
 [self.videoPlayerView.player play];
 
 /* 
-Note: This must be a URL to an actual video resource (e.g. http://website.com/video.mp4, http://website.com/video.m3u8 etc.),
-It cannot be a URL to a web page (e.g. https://vimeo.com/67069182),
-See below for info on using VIMVideoPlayer to play Vimeo videos.
+  Note: This must be a URL to an actual video resource (e.g. http://website.com/video.mp4 or .m3u8 etc.),
+  It cannot be a URL to a web page (e.g. https://vimeo.com/67069182),
+  See below for info on using VIMVideoPlayer to play Vimeo videos.
 */
 
 // Using an AVPlayerItem

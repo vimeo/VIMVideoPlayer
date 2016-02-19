@@ -1,4 +1,5 @@
 #### Ticket
+**Required for Vimeans only**
 [TICKET_NUMBER](https://vimean.atlassian.net/browse/TICKET_NUMBER)
 
 #### Ticket Summary

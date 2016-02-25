@@ -66,25 +66,12 @@
 
 - (void)commonInit
 {
-    [self resetPlayer];
-}
-
-#pragma mark - Public API
-
-- (void)resetPlayer
-{
     VIMVideoPlayer *player = [[VIMVideoPlayer alloc] init];
     
     [self setPlayer:player];
 }
 
-- (void)setVideoFillMode:(NSString *)fillMode
-{
-    AVPlayerLayer *playerLayer = (AVPlayerLayer*)[self layer];
-    playerLayer.videoGravity = fillMode;
-}
-
-#pragma mark - Private API
+#pragma mark - Public API
 
 - (void)setPlayer:(VIMVideoPlayer *)player
 {
@@ -99,6 +86,14 @@
     
     [self attachPlayer];
 }
+
+- (void)setVideoFillMode:(NSString *)fillMode
+{
+    AVPlayerLayer *playerLayer = (AVPlayerLayer*)[self layer];
+    playerLayer.videoGravity = fillMode;
+}
+
+#pragma mark - Private API
 
 - (void)attachPlayer
 {

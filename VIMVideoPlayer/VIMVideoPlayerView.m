@@ -66,11 +66,9 @@
 
 - (void)commonInit
 {
-    _player = [[VIMVideoPlayer alloc] init];
-    _player.muted = YES;
-    _player.looping = YES;
+    VIMVideoPlayer *player = [[VIMVideoPlayer alloc] init];
     
-    [self attachPlayer];
+    [self setPlayer:player];
 }
 
 #pragma mark - Public API
@@ -81,7 +79,7 @@
     {
         return;
     }
-
+    
     [self detachPlayer];
     
     _player = player;

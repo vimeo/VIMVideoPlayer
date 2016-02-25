@@ -95,8 +95,13 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 - (void)setupPlayer
 {
     self.player = [[AVPlayer alloc] init];
-    self.player.muted = NO;
-    self.player.allowsExternalPlayback = YES;
+    
+    self.muted = NO;
+    self.looping = NO;
+    
+    [self setVolume:1.0f];
+    [self enableTimeUpdates];
+    [self enableAirplay];
 }
 
 - (void)setupAudioSession

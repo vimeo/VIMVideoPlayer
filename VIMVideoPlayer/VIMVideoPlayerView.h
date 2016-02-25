@@ -49,6 +49,8 @@
 
 @property (nonatomic, strong) VIMVideoPlayer *player;
 
+- (void)setPlayer:(VIMVideoPlayer *)player;
+
 - (void)setVideoFillMode:(NSString *)fillMode;
 
 @end

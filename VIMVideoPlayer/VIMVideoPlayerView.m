@@ -66,27 +66,16 @@
 
 - (void)commonInit
 {
-    _player = [[VIMVideoPlayer alloc] init];
-    _player.muted = YES;
-    _player.looping = YES;
-    
-    [self attachPlayer];
+    [self resetPlayer];
 }
 
 #pragma mark - Public API
 
-- (void)setPlayer:(VIMVideoPlayer *)player
+- (void)resetPlayer
 {
-    if (_player == player)
-    {
-        return;
-    }
-
-    [self detachPlayer];
+    VIMVideoPlayer *player = [[VIMVideoPlayer alloc] init];
     
-    _player = player;
-    
-    [self attachPlayer];
+    [self setPlayer:player];
 }
 
 - (void)setVideoFillMode:(NSString *)fillMode
@@ -96,6 +85,20 @@
 }
 
 #pragma mark - Private API
+
+- (void)setPlayer:(VIMVideoPlayer *)player
+{
+    if (_player == player)
+    {
+        return;
+    }
+    
+    [self detachPlayer];
+    
+    _player = player;
+    
+    [self attachPlayer];
+}
 
 - (void)attachPlayer
 {

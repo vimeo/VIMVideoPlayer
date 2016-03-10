@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C2AD61E1C91CD8500D433D5 /* field.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5C2AD61D1C91CD8500D433D5 /* field.mp4 */; };
+		5C8CF55F1C920F220019459C /* waterfall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5C8CF55E1C920F220019459C /* waterfall.mp4 */; };
 		5CACFE221C90DF0500C35861 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CACFE211C90DF0500C35861 /* AppDelegate.swift */; };
 		5CACFE241C90DF0500C35861 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CACFE231C90DF0500C35861 /* ViewController.swift */; };
 		5CACFE271C90DF0500C35861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CACFE251C90DF0500C35861 /* Main.storyboard */; };
@@ -19,7 +19,7 @@
 
 /* Begin PBXFileReference section */
 		5C2AD61B1C91C45800D433D5 /* VIMVideoPlayer-iOS-Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VIMVideoPlayer-iOS-Example-Bridging-Header.h"; sourceTree = "<group>"; };
-		5C2AD61D1C91CD8500D433D5 /* field.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = field.mp4; sourceTree = "<group>"; };
+		5C8CF55E1C920F220019459C /* waterfall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waterfall.mp4; sourceTree = "<group>"; };
 		5CACFE1E1C90DF0500C35861 /* VIMVideoPlayer-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIMVideoPlayer-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CACFE211C90DF0500C35861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CACFE231C90DF0500C35861 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				5CACFE331C90E31C00C35861 /* VIMVideoPlayer */,
-				5C2AD61D1C91CD8500D433D5 /* field.mp4 */,
+				5C8CF55E1C920F220019459C /* waterfall.mp4 */,
 				5CACFE211C90DF0500C35861 /* AppDelegate.swift */,
 				5CACFE231C90DF0500C35861 /* ViewController.swift */,
 				5CACFE251C90DF0500C35861 /* Main.storyboard */,
@@ -146,9 +146,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C2AD61E1C91CD8500D433D5 /* field.mp4 in Resources */,
 				5CACFE2C1C90DF0500C35861 /* LaunchScreen.storyboard in Resources */,
 				5CACFE291C90DF0500C35861 /* Assets.xcassets in Resources */,
+				5C8CF55F1C920F220019459C /* waterfall.mp4 in Resources */,
 				5CACFE271C90DF0500C35861 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

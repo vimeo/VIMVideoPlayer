@@ -33,7 +33,7 @@ class ViewController: UIViewController, VIMVideoPlayerViewDelegate
         
         self.videoPlayerView.delegate = self
         
-        if let path = NSBundle.mainBundle().pathForResource("field", ofType: "mp4")
+        if let path = NSBundle.mainBundle().pathForResource("waterfall", ofType: "mp4")
         {
             self.videoPlayerView.player.setURL(NSURL(fileURLWithPath: path))
         }

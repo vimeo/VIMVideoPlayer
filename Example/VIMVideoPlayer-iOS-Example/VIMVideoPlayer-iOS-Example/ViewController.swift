@@ -14,7 +14,7 @@ class ViewController: UIViewController, VIMVideoPlayerViewDelegate
     @IBOutlet weak var slider: UISlider!
     
     private var isScrubbing = false
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -23,14 +23,14 @@ class ViewController: UIViewController, VIMVideoPlayerViewDelegate
         self.setupSlider()
     }
     
-    // MARK: VIMVideoPlayerViewDelegate
-
+    // MARK: Setup
+    
     private func setupVideoPlayerView()
     {
         self.videoPlayerView.player.looping = true
         self.videoPlayerView.player.disableAirplay()
         self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
-
+        
         self.videoPlayerView.delegate = self
         
         if let path = NSBundle.mainBundle().pathForResource("field", ofType: "mp4")
@@ -64,7 +64,7 @@ class ViewController: UIViewController, VIMVideoPlayerViewDelegate
         else
         {
             sender.selected = false
-
+            
             self.videoPlayerView.player.play()
         }
     }
@@ -113,9 +113,9 @@ class ViewController: UIViewController, VIMVideoPlayerViewDelegate
             return
         }
         
-        let totalTimeInSeconds = Float(CMTimeGetSeconds(duration))
-        let currentTimeInSeconds = Float(CMTimeGetSeconds(cmTime))
+        let durationInSeconds = Float(CMTimeGetSeconds(duration))
+        let timeInSeconds = Float(CMTimeGetSeconds(cmTime))
         
-        self.slider.value = currentTimeInSeconds / totalTimeInSeconds
+        self.slider.value = timeInSeconds / durationInSeconds
     }
 }

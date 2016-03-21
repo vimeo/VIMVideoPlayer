@@ -17,42 +17,40 @@ end
 
 ## Usage
 
-Create a new `VIMVideoPlayerView` and add it to your view hierarchy:
+Create a new `VIMVideoPlayerView` or set up an @IBOutlet:
 
-```Objective-c
-#import "VIMVideoPlayerView.h"
+```Swift
+
+@IBOutlet weak var videoPlayerView: VIMVideoPlayerView!
 
 ...
 
-- (void)viewDidLoad
+override func viewDidLoad()
 {
-    [super viewDidLoad];
-  
-    self.videoPlayerView = [[VIMVideoPlayerView alloc] init];
-    self.videoPlayerView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.videoPlayerView.delegate = self;
-
-    [self.videoPlayerView setVideoFillMode:AVLayerVideoGravityResizeAspect];
-    [self.videoPlayerView.player enableTimeUpdates];
-    [self.videoPlayerView.player enableAirplay];
-
-    [self.view addSubview:self.videoPlayerView];
-
-    NSDictionary *views = NSDictionaryOfVariableBindings(_videoPlayerView);
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_videoPlayerView]-0-|" options:0   metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_videoPlayerView]-0-|" options:0   metrics:nil views:views]];
+    // Configure the player as needed
+    self.videoPlayerView.player.looping = true
+    self.videoPlayerView.player.disableAirplay()
+    self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
+    
+    self.videoPlayerView.delegate = self
 }
 
 ```
 
 Play a video:
 
-```Objective-c
+```Swift
+
 // Using an NSURL
 
-NSURL *URL = ...; 
-[self.videoPlayerView.player setURL:URL];
-[self.videoPlayerView.player play];
+if let path = NSBundle.mainBundle().pathForResource("waterfall", ofType: "mp4")
+{
+    self.videoPlayerView.player.setURL(NSURL(fileURLWithPath: path))
+}
+else
+{
+    // Video file not found!
+}
 
 /* 
   Note: This must be a URL to an actual video resource (e.g. http://website.com/video.mp4 or .m3u8 etc.),
@@ -62,31 +60,33 @@ NSURL *URL = ...;
 
 // Using an AVPlayerItem
 
-AVPlayerItem *playerItem = ...;
-[self.videoPlayerView.player setPlayerItem:playerItem];
-[self.videoPlayerView.player play];
+let playerItem: AVPlayerItem = ...
+self.videoPlayerView.player.setPlayerItem(playerItem)
+self.videoPlayerView.player.play()
 
 // Or using an AVAsset
 
-AVAsset *asset = ...;
-[self.videoPlayerView.player setAsset:asset];
-[self.videoPlayerView.player play];
+let asset: AVAsset = ...
+self.videoPlayerView.player.setAsset(asset)
+self.videoPlayerView.player.play()
 
 ```
 
 Optionally implement the `VIMVideoPlayerViewDelegate` protocol methods:
 
-```Objective-c
-@protocol VIMVideoPlayerViewDelegate <NSObject>
+```Swift
 
-@optional
-- (void)videoPlayerViewIsReadyToPlayVideo:(VIMVideoPlayerView *)videoPlayerView;
-- (void)videoPlayerViewDidReachEnd:(VIMVideoPlayerView *)videoPlayerView;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView timeDidChange:(CMTime)cmTime;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView loadedTimeRangeDidChange:(float)duration;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView didFailWithError:(NSError *)error;
+protocol VIMVideoPlayerViewDelegate 
+{    
+    optional public func videoPlayerViewIsReadyToPlayVideo(videoPlayerView: VIMVideoPlayerView!)
+    optional public func videoPlayerViewDidReachEnd(videoPlayerView: VIMVideoPlayerView!)
+    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, timeDidChange cmTime: CMTime)
+    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, loadedTimeRangeDidChange duration: Float)
+    optional public func videoPlayerViewPlaybackBufferEmpty(videoPlayerView: VIMVideoPlayerView!)
+    optional public func videoPlayerViewPlaybackLikelyToKeepUp(videoPlayerView: VIMVideoPlayerView!)
+    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, didFailWithError error: NSError!)
+}
 
-@end
 ```
 
 See [`VIMVideoPlayer.h`](https://github.com/vimeo/VIMVideoPlayer/blob/master/VIMVideoPlayer/VIMVideoPlayer.h) for additional configuration options. 

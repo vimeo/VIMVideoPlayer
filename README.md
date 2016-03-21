@@ -17,7 +17,7 @@ end
 
 ## Usage
 
-Create a new `VIMVideoPlayerView` or set up an @IBOutlet:
+Create a new `VIMVideoPlayerView` instance or set up an @IBOutlet:
 
 ```Swift
 

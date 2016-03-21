@@ -78,13 +78,13 @@ Optionally implement the `VIMVideoPlayerViewDelegate` protocol methods:
 
 protocol VIMVideoPlayerViewDelegate 
 {    
-    optional public func videoPlayerViewIsReadyToPlayVideo(videoPlayerView: VIMVideoPlayerView!)
-    optional public func videoPlayerViewDidReachEnd(videoPlayerView: VIMVideoPlayerView!)
-    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, timeDidChange cmTime: CMTime)
-    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, loadedTimeRangeDidChange duration: Float)
-    optional public func videoPlayerViewPlaybackBufferEmpty(videoPlayerView: VIMVideoPlayerView!)
-    optional public func videoPlayerViewPlaybackLikelyToKeepUp(videoPlayerView: VIMVideoPlayerView!)
-    optional public func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, didFailWithError error: NSError!)
+    optional func videoPlayerViewIsReadyToPlayVideo(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerViewDidReachEnd(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, timeDidChange cmTime: CMTime)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, loadedTimeRangeDidChange duration: Float)
+    optional func videoPlayerViewPlaybackBufferEmpty(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerViewPlaybackLikelyToKeepUp(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, didFailWithError error: NSError!)
 }
 
 ```

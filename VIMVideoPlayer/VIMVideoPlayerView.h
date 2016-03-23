@@ -1,6 +1,6 @@
 //
 //  VideoPlayerView.h
-//  Smokescreen
+//  Vimeo
 //
 //  Created by Alfred Hanssen on 2/9/14.
 //  Copyright (c) 2014-2015 Vimeo (https://vimeo.com)

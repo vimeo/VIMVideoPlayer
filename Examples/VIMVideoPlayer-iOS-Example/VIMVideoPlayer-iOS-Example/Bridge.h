@@ -6,5 +6,4 @@
 //  Copyright © 2016 Gavin King. All rights reserved.
 //
 
-#import "VIMVideoPlayer.h"
-#import "VIMVideoPlayerView.h"
+#import <VimeoPlayer/VimeoPlayer.h>

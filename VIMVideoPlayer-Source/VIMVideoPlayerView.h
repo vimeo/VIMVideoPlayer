@@ -24,8 +24,9 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
+@import Foundation;
+@import AVFoundation;
+@import UIKit;
 
 @class VIMVideoPlayer;
 @class VIMVideoPlayerView;

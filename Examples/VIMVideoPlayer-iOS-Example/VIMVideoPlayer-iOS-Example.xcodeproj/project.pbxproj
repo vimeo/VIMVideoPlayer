@@ -13,12 +13,12 @@
 		5CACFE271C90DF0500C35861 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CACFE251C90DF0500C35861 /* Main.storyboard */; };
 		5CACFE291C90DF0500C35861 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CACFE281C90DF0500C35861 /* Assets.xcassets */; };
 		5CACFE2C1C90DF0500C35861 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CACFE2A1C90DF0500C35861 /* LaunchScreen.storyboard */; };
-		5CACFE381C90E31C00C35861 /* VIMVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CACFE351C90E31C00C35861 /* VIMVideoPlayer.m */; };
-		5CACFE391C90E31C00C35861 /* VIMVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CACFE371C90E31C00C35861 /* VIMVideoPlayerView.m */; };
+		AF8720211CA44863004C752C /* VimeoPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8720201CA44863004C752C /* VimeoPlayer.framework */; };
+		AF8720231CA44874004C752C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8720221CA44874004C752C /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C2AD61B1C91C45800D433D5 /* VIMVideoPlayer-iOS-Example-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VIMVideoPlayer-iOS-Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		5C2AD61B1C91C45800D433D5 /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		5C8CF55E1C920F220019459C /* waterfall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waterfall.mp4; sourceTree = "<group>"; };
 		5CACFE1E1C90DF0500C35861 /* VIMVideoPlayer-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VIMVideoPlayer-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CACFE211C90DF0500C35861 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -27,10 +27,8 @@
 		5CACFE281C90DF0500C35861 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CACFE2B1C90DF0500C35861 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5CACFE2D1C90DF0500C35861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5CACFE341C90E31C00C35861 /* VIMVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayer.h; sourceTree = "<group>"; };
-		5CACFE351C90E31C00C35861 /* VIMVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayer.m; sourceTree = "<group>"; };
-		5CACFE361C90E31C00C35861 /* VIMVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIMVideoPlayerView.h; sourceTree = "<group>"; };
-		5CACFE371C90E31C00C35861 /* VIMVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIMVideoPlayerView.m; sourceTree = "<group>"; };
+		AF8720201CA44863004C752C /* VimeoPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VimeoPlayer.framework; path = "../../VIMVideoPlayer-Framework/build/Debug-iphoneos/VimeoPlayer.framework"; sourceTree = "<group>"; };
+		AF8720221CA44874004C752C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8720211CA44863004C752C /* VimeoPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,8 +46,10 @@
 		5CACFE151C90DF0500C35861 = {
 			isa = PBXGroup;
 			children = (
+				AF8720221CA44874004C752C /* Default-568h@2x.png */,
 				5CACFE201C90DF0500C35861 /* VIMVideoPlayer-iOS-Example */,
 				5CACFE1F1C90DF0500C35861 /* Products */,
+				AF871FDF1CA440BA004C752C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,29 +64,24 @@
 		5CACFE201C90DF0500C35861 /* VIMVideoPlayer-iOS-Example */ = {
 			isa = PBXGroup;
 			children = (
-				5CACFE331C90E31C00C35861 /* VIMVideoPlayer */,
-				5C8CF55E1C920F220019459C /* waterfall.mp4 */,
 				5CACFE211C90DF0500C35861 /* AppDelegate.swift */,
 				5CACFE231C90DF0500C35861 /* ViewController.swift */,
 				5CACFE251C90DF0500C35861 /* Main.storyboard */,
 				5CACFE281C90DF0500C35861 /* Assets.xcassets */,
 				5CACFE2A1C90DF0500C35861 /* LaunchScreen.storyboard */,
 				5CACFE2D1C90DF0500C35861 /* Info.plist */,
-				5C2AD61B1C91C45800D433D5 /* VIMVideoPlayer-iOS-Example-Bridging-Header.h */,
+				5C8CF55E1C920F220019459C /* waterfall.mp4 */,
+				5C2AD61B1C91C45800D433D5 /* Bridge.h */,
 			);
 			path = "VIMVideoPlayer-iOS-Example";
 			sourceTree = "<group>";
 		};
-		5CACFE331C90E31C00C35861 /* VIMVideoPlayer */ = {
+		AF871FDF1CA440BA004C752C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5CACFE341C90E31C00C35861 /* VIMVideoPlayer.h */,
-				5CACFE351C90E31C00C35861 /* VIMVideoPlayer.m */,
-				5CACFE361C90E31C00C35861 /* VIMVideoPlayerView.h */,
-				5CACFE371C90E31C00C35861 /* VIMVideoPlayerView.m */,
+				AF8720201CA44863004C752C /* VimeoPlayer.framework */,
 			);
-			name = VIMVideoPlayer;
-			path = ../../../VIMVideoPlayer;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +145,7 @@
 				5CACFE2C1C90DF0500C35861 /* LaunchScreen.storyboard in Resources */,
 				5CACFE291C90DF0500C35861 /* Assets.xcassets in Resources */,
 				5C8CF55F1C920F220019459C /* waterfall.mp4 in Resources */,
+				AF8720231CA44874004C752C /* Default-568h@2x.png in Resources */,
 				5CACFE271C90DF0500C35861 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,8 +159,6 @@
 			files = (
 				5CACFE241C90DF0500C35861 /* ViewController.swift in Sources */,
 				5CACFE221C90DF0500C35861 /* AppDelegate.swift in Sources */,
-				5CACFE391C90E31C00C35861 /* VIMVideoPlayerView.m in Sources */,
-				5CACFE381C90E31C00C35861 /* VIMVideoPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +220,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -264,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -276,11 +271,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "VIMVideoPlayer-iOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VIMVideoPlayer-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VIMVideoPlayer-iOS-Example/VIMVideoPlayer-iOS-Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/VIMVideoPlayer-iOS-Example/Bridge.h";
 			};
 			name = Debug;
 		};
@@ -288,11 +282,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "VIMVideoPlayer-iOS-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VIMVideoPlayer-iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VIMVideoPlayer-iOS-Example/VIMVideoPlayer-iOS-Example-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/VIMVideoPlayer-iOS-Example/Bridge.h";
 			};
 			name = Release;
 		};

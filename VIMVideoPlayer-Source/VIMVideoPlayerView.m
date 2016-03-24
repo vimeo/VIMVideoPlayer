@@ -27,8 +27,6 @@
 #import "VIMVideoPlayerView.h"
 #import "VIMVideoPlayer.h"
 
-#import <AVFoundation/AVFoundation.h>
-
 @interface VIMVideoPlayerView () <VIMVideoPlayerDelegate>
 
 @end

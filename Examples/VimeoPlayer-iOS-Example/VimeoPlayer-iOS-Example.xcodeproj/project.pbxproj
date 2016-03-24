@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF8720311CA44FBD004C752C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8720301CA44FBD004C752C /* AppDelegate.swift */; };
+		AF8720331CA44FBD004C752C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8720321CA44FBD004C752C /* ViewController.swift */; };
+		AF8720361CA44FBD004C752C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8720341CA44FBD004C752C /* Main.storyboard */; };
+		AF8720381CA44FBD004C752C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8720371CA44FBD004C752C /* Assets.xcassets */; };
+		AF87203B1CA44FBD004C752C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF8720391CA44FBD004C752C /* LaunchScreen.storyboard */; };
+		AF8720461CA44FBD004C752C /* VimeoPlayer_iOS_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8720451CA44FBD004C752C /* VimeoPlayer_iOS_ExampleTests.swift */; };
+		AF8720511CA44FBD004C752C /* VimeoPlayer_iOS_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8720501CA44FBD004C752C /* VimeoPlayer_iOS_ExampleUITests.swift */; };
+		AF87205F1CA44FF6004C752C /* VimeoPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF87205E1CA44FF6004C752C /* VimeoPlayer.framework */; };
+		AF8720631CA4507C004C752C /* waterfall.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AF8720621CA4507C004C752C /* waterfall.mp4 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF8720421CA44FBD004C752C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF8720251CA44FBC004C752C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF87202C1CA44FBD004C752C;
+			remoteInfo = "VimeoPlayer-iOS-Example";
+		};
+		AF87204D1CA44FBD004C752C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF8720251CA44FBC004C752C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF87202C1CA44FBD004C752C;
+			remoteInfo = "VimeoPlayer-iOS-Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF87202D1CA44FBD004C752C /* VimeoPlayer-iOS-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VimeoPlayer-iOS-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8720301CA44FBD004C752C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF8720321CA44FBD004C752C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF8720351CA44FBD004C752C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF8720371CA44FBD004C752C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF87203A1CA44FBD004C752C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF87203C1CA44FBD004C752C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF8720411CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VimeoPlayer-iOS-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8720451CA44FBD004C752C /* VimeoPlayer_iOS_ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoPlayer_iOS_ExampleTests.swift; sourceTree = "<group>"; };
+		AF8720471CA44FBD004C752C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF87204C1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VimeoPlayer-iOS-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF8720501CA44FBD004C752C /* VimeoPlayer_iOS_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VimeoPlayer_iOS_ExampleUITests.swift; sourceTree = "<group>"; };
+		AF8720521CA44FBD004C752C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF87205E1CA44FF6004C752C /* VimeoPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VimeoPlayer.framework; path = "../../VIMVideoPlayer-Framework/build/Debug-iphoneos/VimeoPlayer.framework"; sourceTree = "<group>"; };
+		AF8720611CA4507C004C752C /* Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		AF8720621CA4507C004C752C /* waterfall.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = waterfall.mp4; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF87202A1CA44FBD004C752C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF87205F1CA44FF6004C752C /* VimeoPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF87203E1CA44FBD004C752C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8720491CA44FBD004C752C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF8720241CA44FBC004C752C = {
+			isa = PBXGroup;
+			children = (
+				AF87202F1CA44FBD004C752C /* VimeoPlayer-iOS-Example */,
+				AF8720441CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests */,
+				AF87204F1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests */,
+				AF87202E1CA44FBD004C752C /* Products */,
+				AF8720601CA45004004C752C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AF87202E1CA44FBD004C752C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF87202D1CA44FBD004C752C /* VimeoPlayer-iOS-Example.app */,
+				AF8720411CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests.xctest */,
+				AF87204C1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF87202F1CA44FBD004C752C /* VimeoPlayer-iOS-Example */ = {
+			isa = PBXGroup;
+			children = (
+				AF8720301CA44FBD004C752C /* AppDelegate.swift */,
+				AF8720321CA44FBD004C752C /* ViewController.swift */,
+				AF8720341CA44FBD004C752C /* Main.storyboard */,
+				AF8720371CA44FBD004C752C /* Assets.xcassets */,
+				AF8720391CA44FBD004C752C /* LaunchScreen.storyboard */,
+				AF87203C1CA44FBD004C752C /* Info.plist */,
+				AF8720611CA4507C004C752C /* Bridge.h */,
+				AF8720621CA4507C004C752C /* waterfall.mp4 */,
+			);
+			path = "VimeoPlayer-iOS-Example";
+			sourceTree = "<group>";
+		};
+		AF8720441CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF8720451CA44FBD004C752C /* VimeoPlayer_iOS_ExampleTests.swift */,
+				AF8720471CA44FBD004C752C /* Info.plist */,
+			);
+			path = "VimeoPlayer-iOS-ExampleTests";
+			sourceTree = "<group>";
+		};
+		AF87204F1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF8720501CA44FBD004C752C /* VimeoPlayer_iOS_ExampleUITests.swift */,
+				AF8720521CA44FBD004C752C /* Info.plist */,
+			);
+			path = "VimeoPlayer-iOS-ExampleUITests";
+			sourceTree = "<group>";
+		};
+		AF8720601CA45004004C752C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF87205E1CA44FF6004C752C /* VimeoPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF87202C1CA44FBD004C752C /* VimeoPlayer-iOS-Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF8720551CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-Example" */;
+			buildPhases = (
+				AF8720291CA44FBD004C752C /* Sources */,
+				AF87202A1CA44FBD004C752C /* Frameworks */,
+				AF87202B1CA44FBD004C752C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VimeoPlayer-iOS-Example";
+			productName = "VimeoPlayer-iOS-Example";
+			productReference = AF87202D1CA44FBD004C752C /* VimeoPlayer-iOS-Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF8720401CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF8720581CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-ExampleTests" */;
+			buildPhases = (
+				AF87203D1CA44FBD004C752C /* Sources */,
+				AF87203E1CA44FBD004C752C /* Frameworks */,
+				AF87203F1CA44FBD004C752C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF8720431CA44FBD004C752C /* PBXTargetDependency */,
+			);
+			name = "VimeoPlayer-iOS-ExampleTests";
+			productName = "VimeoPlayer-iOS-ExampleTests";
+			productReference = AF8720411CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF87204B1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF87205B1CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-ExampleUITests" */;
+			buildPhases = (
+				AF8720481CA44FBD004C752C /* Sources */,
+				AF8720491CA44FBD004C752C /* Frameworks */,
+				AF87204A1CA44FBD004C752C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF87204E1CA44FBD004C752C /* PBXTargetDependency */,
+			);
+			name = "VimeoPlayer-iOS-ExampleUITests";
+			productName = "VimeoPlayer-iOS-ExampleUITests";
+			productReference = AF87204C1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF8720251CA44FBC004C752C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Vimeo;
+				TargetAttributes = {
+					AF87202C1CA44FBD004C752C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					AF8720401CA44FBD004C752C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = AF87202C1CA44FBD004C752C;
+					};
+					AF87204B1CA44FBD004C752C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = AF87202C1CA44FBD004C752C;
+					};
+				};
+			};
+			buildConfigurationList = AF8720281CA44FBC004C752C /* Build configuration list for PBXProject "VimeoPlayer-iOS-Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF8720241CA44FBC004C752C;
+			productRefGroup = AF87202E1CA44FBD004C752C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF87202C1CA44FBD004C752C /* VimeoPlayer-iOS-Example */,
+				AF8720401CA44FBD004C752C /* VimeoPlayer-iOS-ExampleTests */,
+				AF87204B1CA44FBD004C752C /* VimeoPlayer-iOS-ExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF87202B1CA44FBD004C752C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF87203B1CA44FBD004C752C /* LaunchScreen.storyboard in Resources */,
+				AF8720381CA44FBD004C752C /* Assets.xcassets in Resources */,
+				AF8720631CA4507C004C752C /* waterfall.mp4 in Resources */,
+				AF8720361CA44FBD004C752C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF87203F1CA44FBD004C752C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF87204A1CA44FBD004C752C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF8720291CA44FBD004C752C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8720331CA44FBD004C752C /* ViewController.swift in Sources */,
+				AF8720311CA44FBD004C752C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF87203D1CA44FBD004C752C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8720461CA44FBD004C752C /* VimeoPlayer_iOS_ExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF8720481CA44FBD004C752C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF8720511CA44FBD004C752C /* VimeoPlayer_iOS_ExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF8720431CA44FBD004C752C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF87202C1CA44FBD004C752C /* VimeoPlayer-iOS-Example */;
+			targetProxy = AF8720421CA44FBD004C752C /* PBXContainerItemProxy */;
+		};
+		AF87204E1CA44FBD004C752C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF87202C1CA44FBD004C752C /* VimeoPlayer-iOS-Example */;
+			targetProxy = AF87204D1CA44FBD004C752C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF8720341CA44FBD004C752C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF8720351CA44FBD004C752C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF8720391CA44FBD004C752C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF87203A1CA44FBD004C752C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF8720531CA44FBD004C752C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF8720541CA44FBD004C752C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF8720561CA44FBD004C752C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "VimeoPlayer-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/VimeoPlayer-iOS-Example/Bridge.h";
+			};
+			name = Debug;
+		};
+		AF8720571CA44FBD004C752C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "VimeoPlayer-iOS-Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/VimeoPlayer-iOS-Example/Bridge.h";
+			};
+			name = Release;
+		};
+		AF8720591CA44FBD004C752C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "VimeoPlayer-iOS-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VimeoPlayer-iOS-Example.app/VimeoPlayer-iOS-Example";
+			};
+			name = Debug;
+		};
+		AF87205A1CA44FBD004C752C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "VimeoPlayer-iOS-ExampleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-ExampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VimeoPlayer-iOS-Example.app/VimeoPlayer-iOS-Example";
+			};
+			name = Release;
+		};
+		AF87205C1CA44FBD004C752C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "VimeoPlayer-iOS-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "VimeoPlayer-iOS-Example";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AF87205D1CA44FBD004C752C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "VimeoPlayer-iOS-ExampleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vimeo.VimeoPlayer-iOS-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "VimeoPlayer-iOS-Example";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF8720281CA44FBC004C752C /* Build configuration list for PBXProject "VimeoPlayer-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8720531CA44FBD004C752C /* Debug */,
+				AF8720541CA44FBD004C752C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF8720551CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8720561CA44FBD004C752C /* Debug */,
+				AF8720571CA44FBD004C752C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF8720581CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-ExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF8720591CA44FBD004C752C /* Debug */,
+				AF87205A1CA44FBD004C752C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF87205B1CA44FBD004C752C /* Build configuration list for PBXNativeTarget "VimeoPlayer-iOS-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF87205C1CA44FBD004C752C /* Debug */,
+				AF87205D1CA44FBD004C752C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF8720251CA44FBC004C752C /* Project object */;
+}

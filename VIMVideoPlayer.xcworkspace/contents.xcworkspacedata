@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:VIMVideoPlayer-Framework/VimeoPlayer.xcodeproj">
+      location = "group:Examples/VimeoPlayer-iOS-Example/VimeoPlayer-iOS-Example.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Examples/VIMVideoPlayer-iOS-Example/VIMVideoPlayer-iOS-Example.xcodeproj">
+      location = "group:VIMVideoPlayer-Framework/VimeoPlayer.xcodeproj">
    </FileRef>
 </Workspace>

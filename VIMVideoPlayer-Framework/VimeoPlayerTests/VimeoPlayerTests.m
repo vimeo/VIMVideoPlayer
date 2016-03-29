@@ -1,18 +1,18 @@
 //
-//  VIMVideoPlayerTests.m
-//  VIMVideoPlayerTests
+//  VimeoPlayerTests.m
+//  VimeoPlayerTests
 //
-//  Created by Hanssen, Alfie on 9/10/15.
-//  Copyright © 2015 Vimeo. All rights reserved.
+//  Created by Alfred Hanssen on 3/24/16.
+//  Copyright © 2016 Vimeo. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface VIMVideoPlayerTests : XCTestCase
+@interface VimeoPlayerTests : XCTestCase
 
 @end
 
-@implementation VIMVideoPlayerTests
+@implementation VimeoPlayerTests
 
 - (void)setUp {
     [super setUp];

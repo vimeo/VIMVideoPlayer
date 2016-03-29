@@ -24,10 +24,9 @@
 //  THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import <AVFoundation/AVFoundation.h>
+@import Foundation;
+@import AVFoundation;
 
-@class AVPlayer;
 @class VIMVideoPlayer;
 
 @protocol VIMVideoPlayerDelegate <NSObject>

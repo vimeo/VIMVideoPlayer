@@ -33,8 +33,7 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
 
   s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => s.version.to_s }
-  s.source_files  = "VIMVideoPlayer", "VIMVideoPlayer/*.{h,m}"
-  s.exclude_files = "VIMVideoPlayer/Exclude"
+  s.source_files  = "VIMVideoPlayer", "VIMVideoPlayer/**/*.{h,m}"
 
   s.requires_arc = true
 

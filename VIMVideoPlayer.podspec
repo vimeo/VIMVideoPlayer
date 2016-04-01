@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "VIMVideoPlayer"
-  s.version      = "6.0.0"
+  s.version      = "6.0.1"
   s.summary      = "A simple wrapper around the AVPlayer and AVPlayerLayer classes."
   s.description  = <<-DESC
                    VIMVideoPlayer is a simple wrapper around the AVPlayer and AVPlayerLayer classes. Check out the README for details. And the Pegasus project for a demo.
@@ -27,13 +27,13 @@ Pod::Spec.new do |s|
                             "Stephen Fredieu" => "support@vimeo.com",
                             "Rahul Kumar" => "support@vimeo.com" }
 
-  s.social_media_url   = "http://twitter.com/vimeo"
+  s.social_media_url   = "http://twitter.com/vimeoapi"
 
   s.ios.deployment_target = '7.0'
   s.tvos.deployment_target = '9.0'
 
   s.source       = { :git => "https://github.com/vimeo/VIMVideoPlayer.git", :tag => s.version.to_s }
-  s.source_files  = "VIMVideoPlayer", "VIMVideoPlayer/**/*.{h,m}"
+  s.source_files  = "VIMVideoPlayer-Source/**/*.{h,m}"
 
   s.requires_arc = true
 

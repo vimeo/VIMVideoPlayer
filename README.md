@@ -103,9 +103,17 @@ You can use the [Vimeo iOS SDK](https://github.com/vimeo/VIMNetworking) to inter
 
 For full documentation on the Vimeo API go [here](https://developer.vimeo.com/).
 
+## Found an Issue?
+
+Please file it in the git [issue tracker](https://github.com/vimeo/VIMVideoPlayer/issues).
+
+## Want to Contribute?
+
+If you'd like to contribute, please follow our guidelines found in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
-`VIMVideoPlayer` is available under the MIT license. See the [LICENSE] file for more info.
+`VIMVideoPlayer` is available under the MIT license. See the [LICENSE](LICENSE.md) file for more info.
 
 ## Questions?
 

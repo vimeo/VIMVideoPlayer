@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VimeoPlayer_iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlK-T8-76H" customClass="VIMVideoPlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fpe-Xd-JjQ">
+                                        <rect key="frame" x="30" y="538" width="540" height="31"/>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2w-Rp-esh">
+                                        <rect key="frame" x="265" y="464" width="70" height="42"/>
+                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                        <state key="normal" title="Pause">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" title="Play"/>
+                                        <connections>
+                                            <action selector="didTapPlayPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4N-dE-gAb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fpe-Xd-JjQ" secondAttribute="trailing" constant="32" id="Aio-uX-Vax"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fpe-Xd-JjQ" secondAttribute="bottom" constant="32" id="AmU-0k-ECZ"/>
+                                    <constraint firstItem="Fpe-Xd-JjQ" firstAttribute="leading" secondItem="dlK-T8-76H" secondAttribute="leading" constant="32" id="g6f-nR-ucA"/>
+                                    <constraint firstItem="m2w-Rp-esh" firstAttribute="centerX" secondItem="dlK-T8-76H" secondAttribute="centerX" id="h8P-Ec-qS6"/>
+                                    <constraint firstItem="Fpe-Xd-JjQ" firstAttribute="top" secondItem="m2w-Rp-esh" secondAttribute="bottom" constant="32" id="ws9-bw-Fdm"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dlK-T8-76H" secondAttribute="trailing" id="DiY-6m-b3H"/>
+                            <constraint firstItem="dlK-T8-76H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K0Z-JZ-VFd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dlK-T8-76H" secondAttribute="bottom" id="ObE-ww-JRe"/>
+                            <constraint firstItem="dlK-T8-76H" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Zeb-bG-lQ1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="Fpe-Xd-JjQ" id="jtw-Nk-gsP"/>
+                        <outlet property="videoPlayerView" destination="dlK-T8-76H" id="nGY-wW-ReT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240" y="291"/>
+        </scene>
+    </scenes>
+</document>

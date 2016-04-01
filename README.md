@@ -1,6 +1,6 @@
 # VIMVideoPlayer
 
-`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
+`VIMVideoPlayer` is a simple wrapper around the [AVPlayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [AVPlayerLayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
 
 ## Setup
 
@@ -11,48 +11,46 @@ Do this by including this repo as a git submodule or by using cocoapods:
 ```Ruby
 # Add this to your podfile
 target 'MyTarget' do
-	pod 'VIMVideoPlayer', ‘{version_number}’
+   pod 'VIMVideoPlayer', ‘{CURRENT_POD_VERSION}’
 end
 ```
 
 ## Usage
 
-Create a new `VIMVideoPlayerView` and add it to your view hierarchy:
+Create a new `VIMVideoPlayerView` instance or set up an @IBOutlet:
 
-```Objective-c
-#import "VIMVideoPlayerView.h"
+```Swift
+
+@IBOutlet weak var videoPlayerView: VIMVideoPlayerView!
 
 ...
 
-- (void)viewDidLoad
+override func viewDidLoad()
 {
-    [super viewDidLoad];
-  
-    self.videoPlayerView = [[VIMVideoPlayerView alloc] init];
-    self.videoPlayerView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.videoPlayerView.delegate = self;
-
-    [self.videoPlayerView setVideoFillMode:AVLayerVideoGravityResizeAspect];
-    [self.videoPlayerView.player enableTimeUpdates];
-    [self.videoPlayerView.player enableAirplay];
-
-    [self.view addSubview:self.videoPlayerView];
-
-    NSDictionary *views = NSDictionaryOfVariableBindings(_videoPlayerView);
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[_videoPlayerView]-0-|" options:0   metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[_videoPlayerView]-0-|" options:0   metrics:nil views:views]];
+    // Configure the player as needed
+    self.videoPlayerView.player.looping = true
+    self.videoPlayerView.player.disableAirplay()
+    self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
+    
+    self.videoPlayerView.delegate = self
 }
 
 ```
 
 Play a video:
 
-```Objective-c
+```Swift
+
 // Using an NSURL
 
-NSURL *URL = ...; 
-[self.videoPlayerView.player setURL:URL];
-[self.videoPlayerView.player play];
+if let path = NSBundle.mainBundle().pathForResource("waterfall", ofType: "mp4")
+{
+    self.videoPlayerView.player.setURL(NSURL(fileURLWithPath: path))
+}
+else
+{
+    // Video file not found!
+}
 
 /* 
   Note: This must be a URL to an actual video resource (e.g. http://website.com/video.mp4 or .m3u8 etc.),
@@ -62,31 +60,33 @@ NSURL *URL = ...;
 
 // Using an AVPlayerItem
 
-AVPlayerItem *playerItem = ...;
-[self.videoPlayerView.player setPlayerItem:playerItem];
-[self.videoPlayerView.player play];
+let playerItem: AVPlayerItem = ...
+self.videoPlayerView.player.setPlayerItem(playerItem)
+self.videoPlayerView.player.play()
 
 // Or using an AVAsset
 
-AVAsset *asset = ...;
-[self.videoPlayerView.player setAsset:asset];
-[self.videoPlayerView.player play];
+let asset: AVAsset = ...
+self.videoPlayerView.player.setAsset(asset)
+self.videoPlayerView.player.play()
 
 ```
 
 Optionally implement the `VIMVideoPlayerViewDelegate` protocol methods:
 
-```Objective-c
-@protocol VIMVideoPlayerViewDelegate <NSObject>
+```Swift
 
-@optional
-- (void)videoPlayerViewIsReadyToPlayVideo:(VIMVideoPlayerView *)videoPlayerView;
-- (void)videoPlayerViewDidReachEnd:(VIMVideoPlayerView *)videoPlayerView;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView timeDidChange:(CMTime)cmTime;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView loadedTimeRangeDidChange:(float)duration;
-- (void)videoPlayerView:(VIMVideoPlayerView *)videoPlayerView didFailWithError:(NSError *)error;
+protocol VIMVideoPlayerViewDelegate 
+{    
+    optional func videoPlayerViewIsReadyToPlayVideo(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerViewDidReachEnd(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, timeDidChange cmTime: CMTime)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, loadedTimeRangeDidChange duration: Float)
+    optional func videoPlayerViewPlaybackBufferEmpty(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerViewPlaybackLikelyToKeepUp(videoPlayerView: VIMVideoPlayerView!)
+    optional func videoPlayerView(videoPlayerView: VIMVideoPlayerView!, didFailWithError error: NSError!)
+}
 
-@end
 ```
 
 See [`VIMVideoPlayer.h`](https://github.com/vimeo/VIMVideoPlayer/blob/master/VIMVideoPlayer/VIMVideoPlayer.h) for additional configuration options. 
@@ -103,14 +103,24 @@ You can use the [Vimeo iOS SDK](https://github.com/vimeo/VIMNetworking) to inter
 
 For full documentation on the Vimeo API go [here](https://developer.vimeo.com/).
 
+## Found an Issue?
+
+Please file it in the git [issue tracker](https://github.com/vimeo/VIMVideoPlayer/issues).
+
+## Want to Contribute?
+
+If you'd like to contribute, please follow our guidelines found in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## License
 
-`VIMVideoPlayer` is available under the MIT license. See the LICENSE file for more info.
+`VIMVideoPlayer` is available under the MIT license. See the [LICENSE](LICENSE.md) file for more info.
 
 ## Questions?
 
-Tweet at us here: @vimeoapi
+Tweet at us here: [@vimeoapi](https://twitter.com/vimeoapi).
 
-Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`
+Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`.
 
-Get in touch [here](https://vimeo.com/help/contact)
+Get in touch [here](https://vimeo.com/help/contact).
+
+Interested in working at Vimeo? We're [hiring](https://vimeo.com/jobs)!

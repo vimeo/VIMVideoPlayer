@@ -1,6 +1,6 @@
 # VIMVideoPlayer
 
-`VIMVideoPlayer` is a simple wrapper around the [`AVPlayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [`AVPlayerLayer`](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
+`VIMVideoPlayer` is a simple wrapper around the [AVPlayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [AVPlayerLayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
 
 ## Setup
 
@@ -11,7 +11,7 @@ Do this by including this repo as a git submodule or by using cocoapods:
 ```Ruby
 # Add this to your podfile
 target 'MyTarget' do
-	pod 'VIMVideoPlayer', ‘{version_number}’
+   pod 'VIMVideoPlayer', ‘{CURRENT_POD_VERSION}’
 end
 ```
 
@@ -105,12 +105,14 @@ For full documentation on the Vimeo API go [here](https://developer.vimeo.com/).
 
 ## License
 
-`VIMVideoPlayer` is available under the MIT license. See the LICENSE file for more info.
+`VIMVideoPlayer` is available under the MIT license. See the [LICENSE] file for more info.
 
 ## Questions?
 
-Tweet at us here: @vimeoapi
+Tweet at us here: [@vimeoapi](https://twitter.com/vimeoapi).
 
-Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`
+Post on [Stackoverflow](http://stackoverflow.com/questions/tagged/vimeo-ios) with the tag `vimeo-ios`.
 
-Get in touch [here](https://vimeo.com/help/contact)
+Get in touch [here](https://vimeo.com/help/contact).
+
+Interested in working at Vimeo? We're [hiring](https://vimeo.com/jobs)!

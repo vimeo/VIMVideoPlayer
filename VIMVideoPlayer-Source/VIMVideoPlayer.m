@@ -447,8 +447,11 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
         if (finished)
         {
             _isAtEndTime = NO;
-            
-            [self play];
+         
+            if (self.isPlaying)
+            {
+                [self play];
+            }
         }
         
     }];

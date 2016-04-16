@@ -444,13 +444,16 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 {
     [self.player seekToTime:kCMTimeZero toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:^(BOOL finished) {
         
-        _isAtEndTime = NO;
-        
-        if (self.isPlaying)
+        if (finished)
         {
-            [self play];
+            _isAtEndTime = NO;
+            
+            if (self.isPlaying)
+            {
+                [self play];
+            }
         }
-
+        
     }];
 }
 

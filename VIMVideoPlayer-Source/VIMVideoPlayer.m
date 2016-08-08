@@ -99,6 +99,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     self.muted = NO;
     self.looping = NO;
     
+    self.player.usesExternalPlaybackWhileExternalScreenIsActive = YES;
+    
     [self setVolume:1.0f];
     [self enableTimeUpdates];
     [self enableAirplay];

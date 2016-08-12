@@ -28,7 +28,6 @@
 
 static const float DefaultPlayableBufferLength = 2.0f;
 static const float DefaultVolumeFadeDuration = 1.0f;
-static const float TimeObserverInterval = 0.01f;
 
 NSString * const kVideoPlayerErrorDomain = @"kVideoPlayerErrorDomain";
 
@@ -644,7 +643,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     }
     
     __weak typeof (self) weakSelf = self;
-    self.timeObserverToken = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(TimeObserverInterval, NSEC_PER_SEC) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    self.timeObserverToken = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(TimeUpdateInterval, NSEC_PER_SEC) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         
         __strong typeof (self) strongSelf = weakSelf;
         if (!strongSelf)

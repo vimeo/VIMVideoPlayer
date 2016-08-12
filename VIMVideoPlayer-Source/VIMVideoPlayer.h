@@ -29,6 +29,8 @@
 
 @class VIMVideoPlayer;
 
+static const float TimeUpdateInterval = 0.1f;
+
 @protocol VIMVideoPlayerDelegate <NSObject>
 
 @optional

@@ -720,12 +720,29 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                     NSLog(@"Video player Status Failed: player item error = %@", self.player.currentItem.error);
                     NSLog(@"Video player Status Failed: player error = %@", self.player.error);
                     
+                    // First, try to use the player error if it exists
+
                     NSError *error = self.player.error;
+                    
+                    // Otherwise try to use the current item's error
+                    
                     if (!error)
                     {
                         error = self.player.currentItem.error;
                     }
-                    else
+                    
+                    // If there's a more specific underlyng error, use that
+                    
+                    NSError *underlyingError = [error.userInfo objectForKey:NSUnderlyingErrorKey];
+                    
+                    if (underlyingError)
+                    {
+                        error = underlyingError;
+                    }
+
+                    // Finally, construct our own as a last resort
+                    
+                    if (!error)
                     {
                         error = [NSError errorWithDomain:kVideoPlayerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey : @"unknown player error, status == AVPlayerItemStatusFailed"}];
                     }

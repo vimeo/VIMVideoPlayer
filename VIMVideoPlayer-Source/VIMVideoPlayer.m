@@ -165,7 +165,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
     [self resetPlayerItemIfNecessary];
     
-    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:asset automaticallyLoadedAssetKeys:@[NSStringFromSelector(@selector(tracks))]];
+    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset: asset];
+    
     if (!playerItem)
     {
         [self reportUnableToCreatePlayerItem];

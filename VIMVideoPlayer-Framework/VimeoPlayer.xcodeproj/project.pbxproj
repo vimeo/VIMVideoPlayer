@@ -161,9 +161,11 @@
 				TargetAttributes = {
 					AF871FFD1CA447E5004C752C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 35R365FS4Q;
 					};
 					AF8720071CA447E5004C752C = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 35R365FS4Q;
 					};
 				};
 			};
@@ -322,7 +324,9 @@
 		AF8720131CA447E5004C752C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35R365FS4Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -340,6 +344,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 35R365FS4Q;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -356,6 +361,7 @@
 		AF8720161CA447E5004C752C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 35R365FS4Q;
 				INFOPLIST_FILE = VimeoPlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VimeoPlayerTests;
@@ -366,6 +372,7 @@
 		AF8720171CA447E5004C752C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 35R365FS4Q;
 				INFOPLIST_FILE = VimeoPlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vimeo.VimeoPlayerTests;

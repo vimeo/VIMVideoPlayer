@@ -28,7 +28,6 @@
 
 static const float DefaultPlayableBufferLength = 2.0f;
 static const float DefaultVolumeFadeDuration = 1.0f;
-static const float TimeObserverInterval = 0.01f;
 
 NSString * const kVideoPlayerErrorDomain = @"kVideoPlayerErrorDomain";
 
@@ -99,6 +98,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     self.muted = NO;
     self.looping = NO;
     
+    self.player.usesExternalPlaybackWhileExternalScreenIsActive = YES;
+    
     [self setVolume:1.0f];
     [self enableTimeUpdates];
     [self enableAirplay];
@@ -164,7 +165,8 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
 
     [self resetPlayerItemIfNecessary];
     
-    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset:asset automaticallyLoadedAssetKeys:@[NSStringFromSelector(@selector(tracks))]];
+    AVPlayerItem *playerItem = [[AVPlayerItem alloc] initWithAsset: asset];
+    
     if (!playerItem)
     {
         [self reportUnableToCreatePlayerItem];
@@ -642,7 +644,7 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
     }
     
     __weak typeof (self) weakSelf = self;
-    self.timeObserverToken = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(TimeObserverInterval, NSEC_PER_SEC) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
+    self.timeObserverToken = [self.player addPeriodicTimeObserverForInterval:CMTimeMakeWithSeconds(TimeUpdateInterval, NSEC_PER_SEC) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         
         __strong typeof (self) strongSelf = weakSelf;
         if (!strongSelf)
@@ -719,12 +721,29 @@ static void *VideoPlayer_PlayerItemLoadedTimeRangesContext = &VideoPlayer_Player
                     NSLog(@"Video player Status Failed: player item error = %@", self.player.currentItem.error);
                     NSLog(@"Video player Status Failed: player error = %@", self.player.error);
                     
+                    // First, try to use the player error if it exists
+
                     NSError *error = self.player.error;
+                    
+                    // Otherwise try to use the current item's error
+                    
                     if (!error)
                     {
                         error = self.player.currentItem.error;
                     }
-                    else
+                    
+                    // If there's a more specific underlyng error, use that
+                    
+                    NSError *underlyingError = [error.userInfo objectForKey:NSUnderlyingErrorKey];
+                    
+                    if (underlyingError)
+                    {
+                        error = underlyingError;
+                    }
+
+                    // Finally, construct our own as a last resort
+                    
+                    if (!error)
                     {
                         error = [NSError errorWithDomain:kVideoPlayerErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey : @"unknown player error, status == AVPlayerItemStatusFailed"}];
                     }

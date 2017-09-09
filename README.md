@@ -1,3 +1,7 @@
+⚠️⚠️⚠️
+This library has been deprecated and will be removed in the future. Use [PlayerKit](https://github.com/vimeo/PlayerKit)  instead.
+⚠️⚠️⚠️
+
 # VIMVideoPlayer
 
 `VIMVideoPlayer` is a simple wrapper around the [AVPlayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayer_Class/index.html) and [AVPlayerLayer](https://developer.apple.com/library/prerelease/ios/documentation/AVFoundation/Reference/AVPlayerLayer_Class/index.html#//apple_ref/occ/cl/AVPlayerLayer) classes. 
